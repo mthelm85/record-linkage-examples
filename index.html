@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<title>Record Linkage</title>
+
+		<link rel="stylesheet" href="reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/blood.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+		<script src="https://d3js.org/d3.v3.js"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+<!-- Slide 1 -->
+				<section>
+					<h1>Record Linkage Examples</h1>
+				</section>
+<!-- Slide 2 -->
+				<section>
+					<section><h6>Example 1: Data Deduplication</h6></section>
+					<section data-auto-animate>
+						<ul>
+							<li>Jon Arbuckle</li>
+							<li>Jerrold Johansson</li>
+							<li>John Arbuckle</li>
+							<li>Gerald Johanssen</li>
+						</ul>
+					</section>
+					<section data-auto-animate>
+						<ul>
+							<li style="color: #EC4899;">Jon Arbuckle</li>
+							<li>Jerrold Johansson</li>
+							<li style="color: #EC4899;">John Arbuckle</li>
+							<li>Gerald Johanssen</li>
+						</ul>
+					</section>
+					<section data-auto-animate>
+						<ul>
+							<li>Jon Arbuckle</li>
+							<li style="color: #24e04d;">Jerrold Johansson</li>
+							<li>John Arbuckle</li>
+							<li style="color: #24e04d;">Gerald Johanssen</li>
+						</ul>
+					</section>
+					<section data-auto-animate>
+						<ul>
+							<li>Jon Arbuckle</li>
+							<li>Gerald Johanssen</li>
+						</ul>
+					</section>
+				</section>
+<!-- Slide 3 -->
+				<section>
+					<section><h6>Example 2: Linking Across Two Data Sets</h6></section>
+					<section data-auto-animate>
+						<div class="container">
+							<div class="child">
+								<table data-id="table">
+									<thead>
+									<tr>
+										<th>First</th>
+										<th>Last</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>Leonhard</td>
+										<td>Euler</td>
+									</tr>
+									<tr>
+										<td>Alan</td>
+										<td>Turing</td>
+									</tr>
+									<tr>
+										<td>David</td>
+										<td>Hilbert</td>
+									</tr>
+									<tr>
+										<td>Isaac</td>
+										<td>Newton</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="child">
+								<table data-id="table">
+									<thead>
+									<tr>
+										<th>First</th>
+										<th>Last</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>Gottfried</td>
+										<td>Leibniz</td>
+									</tr>
+									<tr>
+										<td>Carl</td>
+										<td>Gauss</td>
+									</tr>
+									<tr>
+										<td>Allen</td>
+										<td>Touring</td>
+									</tr>
+									<tr>
+										<td>Leonard</td>
+										<td>Oiler</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</section>
+					<section data-auto-animate>
+						<div class="container">
+							<div class="child">
+								<table data-id="table">
+									<thead>
+									<tr>
+										<th>First</th>
+										<th>Last</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr style="color: #EC4899;">
+										<td>Leonhard</td>
+										<td>Euler</td>
+									</tr>
+									<tr style="color: #24e04d;">
+										<td>Alan</td>
+										<td>Turing</td>
+									</tr>
+									<tr>
+										<td>David</td>
+										<td>Hilbert</td>
+									</tr>
+									<tr>
+										<td>Isaac</td>
+										<td>Newton</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="child">
+								<table data-id="table">
+									<thead>
+									<tr>
+										<th>First</th>
+										<th>Last</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>Gottfried</td>
+										<td>Leibniz</td>
+									</tr>
+									<tr>
+										<td>Carl</td>
+										<td>Gauss</td>
+									</tr>
+									<tr style="color: #24e04d;">
+										<td>Allen</td>
+										<td>Touring</td>
+									</tr>
+									<tr style="color: #EC4899;">
+										<td>Leonard</td>
+										<td>Oiler</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</section>
+				</section>			
+			</div>
+		</div>
+
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+	<style>
+		.container {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 60px;
+		}
+	</style>
+</html>
